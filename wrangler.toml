@@ -6,3 +6,6 @@ compatibility_flags = ["nodejs_compat"]
 rules = [
   { type = "Data", globs = ["**/*.ttf"], fallthrough = true }
 ]
+
+[site]
+bucket = "./page/dist"

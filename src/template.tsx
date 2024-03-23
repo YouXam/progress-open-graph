@@ -9,10 +9,22 @@ function toUTC8DateString(date: Date) {
 	})
 }
 
-export const template = (start: Date, end: Date, title: string) => {
+function toUTC8String(date: Date) {
+	return date.toLocaleString('zh-cn', {
+		timeZone: "Asia/Shanghai",
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit',
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+	})
+}
+
+export const template = (start: Date, end: Date, title: string, copyright: string) => {
 	const p = ((new Date()).getTime() - start.getTime()) /
 		(end.getTime() - start.getTime()) * 100;
-	const maxt = 90, mint = 5;
+	const maxt = 85, mint = 20;
 	const pr = maxt - mint;
 	const px = pr * p / 100 + mint;
 	return <div
@@ -65,7 +77,7 @@ export const template = (start: Date, end: Date, title: string) => {
 				backgroundClip: 'text',
 				color: 'transparent',
 				fontSize: "0.6em",
-				marginTop: "30px",
+				marginTop: "25px",
 				position: "absolute",
 				left: 10,
 				top: 60,
@@ -99,17 +111,31 @@ export const template = (start: Date, end: Date, title: string) => {
 
 		<div
 			style={{
-				color: '#999',
-				fontSize: "0.7rem",
+				color: 'black',
+				fontSize: "1rem",
 				position: "absolute",
-				right: 5,
-				top: 4,
+				left: 10,
+				top: 135,
 				fontWeight: 100,
 				display: 'flex',
 				letterSpacing: 0
 			}}
 		>
-			https://yxm.pl/6
+			{toUTC8String(new Date())}
+		</div>
+		<div
+			style={{
+				color: '#999',
+				fontSize: "0.7rem",
+				position: "absolute",
+				left: 10,
+				top: 160,
+				fontWeight: 100,
+				display: 'flex',
+				letterSpacing: 0
+			}}
+		>
+			{copyright}
 		</div>
 	</div>
 }
