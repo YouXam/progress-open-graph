@@ -39,7 +39,10 @@ export default function ImageDownloader({
                         <Select
 							onValueChange={x => setQuality(x as 'low' | 'medium' | 'high')}
 							defaultValue="medium"
-							onOpenChange={setSelectOpen}
+							onOpenChange={opened => {
+								if (opened) setSelectOpen(true)
+								else setTimeout(() => setSelectOpen(false), 100)
+							}}
 						>
                             <SelectTrigger className="w-full">
                                 <SelectValue placeholder="Image quality" />
