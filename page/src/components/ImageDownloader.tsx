@@ -19,12 +19,12 @@ export default function ImageDownloader({
 }: {
     title: string,
     disabled?: boolean,
-    onDownload: (type: "svg" | "png", quality: 'low' | 'medium' | 'high') => any
+    onDownload: (type: "svg" | "png", quality: 'low' | 'medium' | 'high') => Promise<void>
 }) {
 
     const [downloading, setDownloading] = useState(false)
-
     const [quality, setQuality] = useState<'low' | 'medium' | 'high'>("medium")
+	const [selectOpen, setSelectOpen] = useState(false)
 
     return (
         <div className="flex flex-col w-full">
@@ -34,9 +34,13 @@ export default function ImageDownloader({
                         {title}
                     </h1>
                 </div>
-                <div className="gap-4 flex flex-col w-full justify-center items-center"> 
+                <div className="gap-4 flex flex-col w-full justify-center items-center">
                     <div className="flex flex-col gap-1 sm:flex-row w-full max-w-md">
-                        <Select onValueChange={x => setQuality(x as 'low' | 'medium' | 'high')} defaultValue="medium">
+                        <Select
+							onValueChange={x => setQuality(x as 'low' | 'medium' | 'high')}
+							defaultValue="medium"
+							onOpenChange={setSelectOpen}
+						>
                             <SelectTrigger className="w-full">
                                 <SelectValue placeholder="Image quality" />
                             </SelectTrigger>
@@ -48,7 +52,7 @@ export default function ImageDownloader({
                         </Select>
                         <Button
                             variant="outline"
-                            disabled={downloading || disabled}
+                            disabled={downloading || disabled || selectOpen}
                             onClick={async () => {
                                 setDownloading(true)
                                 await onDownload("png", quality)
@@ -63,7 +67,7 @@ export default function ImageDownloader({
                         <Button
                             variant="outline"
                             className="w-full"
-                            disabled={disabled}
+                            disabled={disabled || selectOpen}
                             onClick={async () => {
                                 await onDownload("svg", "high")
                             }}
@@ -72,7 +76,7 @@ export default function ImageDownloader({
                         </Button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     )
