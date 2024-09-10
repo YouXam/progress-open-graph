@@ -18,11 +18,11 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install
-          cd pages
+          cd page
           pnpm install
       - name: Build frontend
         run: |
-          cd pages
+          cd page
           pnpm run build
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
