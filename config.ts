@@ -28,6 +28,13 @@ export default {
 			start: UTC8("2024-07-06"),
 			end: UTC8("2024-08-24"),
 		}
+		,
+		{
+			name: "BUPT 秋季学期",
+			description: "北京邮电大学 2024-2025 第一学期",
+			start: UTC8("2024-08-26"),
+			end: UTC8("2025-01-10"),
+		}
 	] as Array<{
 		name: string
 		description: string
