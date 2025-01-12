@@ -27,14 +27,19 @@ export default {
 			description: "2024 北京邮电大学暑假",
 			start: UTC8("2024-07-06"),
 			end: UTC8("2024-08-24"),
-		}
-		,
+		},
 		{
 			name: "BUPT 秋季学期",
 			description: "北京邮电大学 2024-2025 第一学期",
 			start: UTC8("2024-08-26"),
 			end: UTC8("2025-01-10"),
-		}
+		},
+                {
+			name: "BUPT 寒假",
+			description: "2025 北京邮电大学寒假",
+			start: UTC8("2024-01-11"),
+			end: UTC8("2024-02-22"),
+		},
 	] as Array<{
 		name: string
 		description: string
