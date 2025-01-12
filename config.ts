@@ -46,6 +46,12 @@ export default {
             start: UTC8("2025-02-23"),
             end: UTC8("2025-07-04"),
         },
+        {
+            name: "BUPT 暑假",
+            description: "2025 北京邮电大学暑假",
+            start: UTC8("2025-07-05"),
+            end: UTC8("2025-08-30"),
+        }
     ] as Array<{
         name: string
         description: string
