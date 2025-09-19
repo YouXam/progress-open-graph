@@ -18,8 +18,8 @@ importers:
         specifier: ^18.2.67
         version: 18.2.67
       hono:
-        specifier: ^4.6.5
-        version: 4.6.5
+        specifier: ^4.9.7
+        version: 4.9.7
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -722,8 +722,8 @@ packages:
     resolution: {integrity: sha512-Ox1pJVrDCyGHMG9CFg1tmrRUMRPRsAWYc/PinY0XzJU4K7y7vjNoLKIQ7BR5UJMCxNN8EM1MNDmHWA/B3aZUuw==}
     engines: {node: '>=6'}
 
-  hono@4.6.5:
-    resolution: {integrity: sha512-qsmN3V5fgtwdKARGLgwwHvcdLKursMd+YOt69eGpl1dUCJb8mCd7hZfyZnBYjxCegBG7qkJRQRUy2oO25yHcyQ==}
+  hono@4.9.7:
+    resolution: {integrity: sha512-t4Te6ERzIaC48W3x4hJmBwgNlLhmiEdEE5ViYb02ffw4ignHNHa5IBtPjmbKstmtKa8X6C35iWwK4HaqvrzG9w==}
     engines: {node: '>=16.9.0'}
 
   human-signals@5.0.0:
@@ -1679,7 +1679,7 @@ snapshots:
 
   hex-rgb@4.3.0: {}
 
-  hono@4.6.5: {}
+  hono@4.9.7: {}
 
   human-signals@5.0.0: {}
 
