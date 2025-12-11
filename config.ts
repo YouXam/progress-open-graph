@@ -7,7 +7,7 @@ function UTC8(s: string) {
 export default {
     title: "BUPT progress",
     description: "BUPT 学期和假期进度",
-    image_copyrights: "https://yxm.pl/6",
+    image_copyrights: "by YouXam",
     site_copyrights: "© YouXam",
     events: [
         {
